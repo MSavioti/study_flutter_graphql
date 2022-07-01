@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         const SizedBox(height: 16.0),
         Query(
           options: QueryOptions(
-            document: gql(PodekexQueries.getPokemon),
+            document: gql(PodekexQueries.getPokemon(controller.text)),
             fetchPolicy: FetchPolicy.cacheAndNetwork,
           ),
           builder: (QueryResult result,
