@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:study_flutter_graphql/app/data/pokedex_queries.dart';
 import 'package:study_flutter_graphql/app/presentation/queries_document_provider.dart';
-import 'package:study_flutter_graphql/app/presentation/screens/home/home_screen.dart';
+import 'package:study_flutter_graphql/app/presentation/screens/home/home_module.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -31,7 +31,10 @@ class _AppState extends State<App> {
           theme: ThemeData(
             primarySwatch: Colors.purple,
           ),
-          home: HomeScreen(),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => const HomeModule(),
+          },
         ),
       ),
     );

@@ -8,6 +8,6 @@ class FlavorText {
   });
 
   factory FlavorText.fromJson(Map<String, dynamic> json) {
-    return FlavorText(flavor: json['game'], game: json['game']);
+    return FlavorText(flavor: json['flavor'], game: json['game']);
   }
 }

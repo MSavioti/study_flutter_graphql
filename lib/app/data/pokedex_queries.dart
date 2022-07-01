@@ -1,55 +1,55 @@
 class PodekexQueries {
-  static String getPokemon(String pokemonName) {
+  static String get getPokemon {
     return """
-    query getPokemon(pokemon: $pokemonName, reverseFlavorTexts: true, takeFlavorTexts: 1,) {
-      abilities {
-        first
-        second
-        hidden
-        special
+    query(\$pokemon: PokemonEnum!, \$reverseFlavorTexts: Boolean, \$takeFlavorTexts: Int) {
+      getPokemon(pokemon: \$pokemon, reverseFlavorTexts: \$reverseFlavorTexts, takeFlavorTexts: \$takeFlavorTexts) {
+        abilities {
+          first
+          second
+          hidden
+          special
+        }
+        baseStats {
+          attack
+          defense
+          hp
+          specialattack
+          specialdefense
+          speed
+        }
+        baseStatsTotal
+        bulbapediaPage
+        num
+        evolutionLevel
+        evYields {
+          attack
+          defense
+          hp
+          specialattack
+          specialdefense
+          speed
+        }
+        flavorTexts {
+          game
+          flavor
+        }
+        forme
+        gender {
+          female
+          male
+        }
+        height
+        isEggObtainable
+        levellingRate
+        maximumHatchTime
+        minimumHatchTime
+        serebiiPage
+        shinySprite
+        species
+        sprite
+        types
+        weight
       }
-      baseStats {
-        attack
-        defense
-        hp
-        specialattack
-        specialdefense
-        speed
-      }
-      baseStatsTotal
-      bulbapediaPage
-      dexNumber
-      evolutionLevel
-      evolutions
-      evYields {
-        attack
-        defense
-        hp
-        specialattack
-        specialdefense
-        speed
-      }
-      flavorTexts {
-        game
-        flavor
-      }
-      forme
-      gender {
-        female
-        male
-      }
-      height
-      isEggObtainable
-      levellingRate
-      maximumHatchTime
-      minimumHatchTime
-      preevolutions
-      serebiiPage
-      shinySprite
-      species
-      sprite
-      types
-      weight
     }
    """;
   }

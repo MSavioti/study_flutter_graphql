@@ -90,7 +90,7 @@ class Pokemon {
       flavorTexts: flavorTexts,
       forme: json['forme'],
       gender: Gender.fromJson(json['gender']),
-      height: json['height'],
+      height: json['height'].toDouble(),
       isEggObtainable: json['isEggObtainable'],
       levellingRate: json['levellingRate'],
       maximumHatchTime: json['maximumHatchTime'],
@@ -101,7 +101,7 @@ class Pokemon {
       species: json['species'],
       sprite: json['sprite'],
       types: json['types'].cast<String>(),
-      weight: json['weight'],
+      weight: json['weight'].toDouble(),
     );
   }
 }

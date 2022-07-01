@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class SearchTextField extends StatefulWidget {
+  final Function(String) onSubmit;
   final String? initialValue;
   final TextEditingController? controller;
 
   const SearchTextField({
     Key? key,
+    required this.onSubmit,
     this.initialValue,
     this.controller,
   }) : super(key: key);
@@ -26,13 +28,6 @@ class _SearchTextFieldState extends State<SearchTextField> {
 
   @override
   Widget build(BuildContext context) {
-    void _search(String searchTerm) {
-      Navigator.of(context).pushReplacementNamed(
-        '/search',
-        arguments: searchTerm,
-      );
-    }
-
     return TextField(
       controller: controller,
       cursorColor: Colors.white70,
@@ -57,7 +52,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
         ),
       ),
       style: const TextStyle(color: Colors.white70),
-      onSubmitted: _search,
+      onSubmitted: widget.onSubmit,
     );
   }
 }
